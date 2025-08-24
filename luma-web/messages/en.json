@@ -5,7 +5,7 @@
     "ka": "Georgian",
     "ru": "Russian"
   },
-  "header": {
+  "Main": {
     "FAQ": "Frequently Asked Questions",
     "donorForm": "Donor Registration Form",
     "confidential": "Your information will remain confidential",
@@ -20,7 +20,8 @@
     "requiredInfo": "Required Information",
     "weight": "Weight (kg)",
     "height": "Height (cm)",
-    "consent": "I agree to the processing of personal data and the rules. Read the rules",
+    "consent": "I agree to the processing of personal data and the rules.",
+    "Read": " Read the rules",
     "register": "Register",
     "aboutUs": "About Us",
     "aboutText": "Our goal is to give infertile couples the chance to become parents. Our clinic operates with the highest standards under the supervision of professional doctors. We ensure safety, confidentiality, and fair compensation for donors.",
@@ -38,5 +39,23 @@
     "email": "Email",
     "whatsapp": "WhatsApp",
     "viber": "Viber"
+  },
+  "placeholders": {
+    "firstName": "Lika",
+    "lastName": "Abuashvili",
+    "age": "25",
+    "phone": "568 789 456",
+    "education": "Georgian Technical University",
+    "weight": "55",
+    "height": "165"
+  },
+  "errors": {
+    "firstName": "Name is required",
+    "lastName": "Last Name is required",
+    "age": "Age is required",
+    "phone": "Phone number is required",
+    "education": "Education is required",
+    "weight": "Weight is required",
+    "height": "Height is required"
   }
 }
