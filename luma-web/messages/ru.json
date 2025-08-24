@@ -1,4 +1,10 @@
 {
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "en": "English",
+    "ka": "Georgian",
+    "ru": "Russian"
+  },
   "header": {
     "FAQ": "ხშირად დასმული კითხვები -3"
   }
