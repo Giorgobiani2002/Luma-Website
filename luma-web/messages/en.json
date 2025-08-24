@@ -6,6 +6,37 @@
     "ru": "Russian"
   },
   "header": {
-    "FAQ": "ხშირად დასმული კითხვები 2"
+    "FAQ": "Frequently Asked Questions",
+    "donorForm": "Donor Registration Form",
+    "confidential": "Your information will remain confidential",
+    "contactInfo": "Contact Information",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "age": "Age",
+    "phone": "Phone",
+    "education": "Education",
+    "uploadImages": "Upload your photos",
+    "uploadMin": "Upload at least 2 photos",
+    "requiredInfo": "Required Information",
+    "weight": "Weight (kg)",
+    "height": "Height (cm)",
+    "consent": "I agree to the processing of personal data and the rules. Read the rules",
+    "register": "Register",
+    "aboutUs": "About Us",
+    "aboutText": "Our goal is to give infertile couples the chance to become parents. Our clinic operates with the highest standards under the supervision of professional doctors. We ensure safety, confidentiality, and fair compensation for donors.",
+    "howItWorks": "How It Works",
+    "stepRegister": "Registration – fill out a simple form.",
+    "stepCheckup": "Medical Check-up – tests and consultation.",
+    "stepStimulation": "Stimulation – short period with hormonal medication.",
+    "stepDonation": "Donation – minor and painless procedure with anesthesia.",
+    "stepCompensation": "Compensation – receive $3000–$5000 immediately.",
+    "whoIsItFor": "Who is it for?",
+    "whoText": "If you are 18–35 years old, healthy, and willing to help infertile couples, then this program is for you.",
+    "safety": "Safety & Confidentiality",
+    "safetyText": "All processes are carried out according to international standards. Your data is protected and will never be shared with third parties. You are our top priority.",
+    "contact": "Contact",
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "viber": "Viber"
   }
 }
