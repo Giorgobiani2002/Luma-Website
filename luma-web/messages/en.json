@@ -57,5 +57,44 @@
     "education": "Education is required",
     "weight": "Weight is required",
     "height": "Height is required"
+  },
+
+  "privacy": {
+    "title": "Privacy Policy and Terms for Luma Donors",
+    "intro": "By registering as a donor on the Luma platform, you agree to the following terms regarding the collection, use, and protection of your personal information:",
+    "sections": {
+      "eligibility": {
+        "title": "1. Eligibility",
+        "text": "You confirm that you are at least 18 years old. Only individuals meeting this age requirement can register and participate as donors."
+      },
+      "collection": {
+        "title": "2. Personal Data Collection",
+        "text": "During registration, we may collect personal information, including your name, age, medical history, and photographs. This information is used solely for the purpose of matching donors with potential recipients."
+      },
+      "usage": {
+        "title": "3. How We Use Your Information",
+        "text": "Your information is used exclusively to:\n- Create your donor profile on our platform.\n- Allow registered clients or recipients to view and evaluate potential donors.\n- Facilitate communication between donors and recipients, when necessary."
+      },
+      "confidentiality": {
+        "title": "4. Confidentiality and Security",
+        "text": "Luma treats your data with strict confidentiality. Your personal information is never shared with third parties outside the platform without your explicit consent, except when required by law. We use technical and administrative measures to protect your data from unauthorized access."
+      },
+      "visibility": {
+        "title": "5. Profile Visibility",
+        "text": "Only registered clients seeking donors can view your profile, which includes your personal details and submitted images. Your data will not be publicly accessible beyond the platform."
+      },
+      "withdraw": {
+        "title": "6. Right to Withdraw",
+        "text": "You can withdraw your consent at any time by contacting us. Upon withdrawal, your profile will be deactivated, and your data will no longer be visible to potential recipients."
+      },
+      "images": {
+        "title": "7. Consent to Use Images",
+        "text": "By submitting images, you confirm that you own the rights to them and allow Luma to display them on your profile for matching purposes."
+      },
+      "acceptance": {
+        "title": "8. Acceptance",
+        "text": "By completing registration and checking the “Accept Terms and Privacy Policy” checkbox, you confirm that you are at least 18 years old and agree to this privacy policy and terms."
+      }
+    }
   }
 }
