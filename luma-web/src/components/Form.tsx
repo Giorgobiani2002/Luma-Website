@@ -3,6 +3,7 @@
 import { useForm } from "react-hook-form";
 import PrivacyTerms from "./PrivacyTerms";
 import { useState } from "react";
+import axios from "axios";
 
 type FormValues = {
   name: string;
@@ -26,19 +27,19 @@ export default function Form() {
   const [accepted, setAccepted] = useState(false);
 
   const onSubmit = async (data: FormValues) => {
-    const selectedPhotos = [data.photo1, data.photo2, data.photo3].filter(
-      (fileList) => fileList && fileList.length > 0
-    );
-    if (!accepted) {
-      alert("გთხოვთ, დათანხმდეთ პირადი ინფორმაციისა და წესების მიღებას");
-      return;
-    }
-    alert("თქვენ დათანხმდით წესებს და შეგიძლიათ გაგრძელება!");
+    // const selectedPhotos = [data.photo1, data.photo2, data.photo3].filter(
+    //   (fileList) => fileList && fileList.length > 0
+    // );
+    // if (!accepted) {
+    //   alert("გთხოვთ, დათანხმდეთ პირადი ინფორმაციისა და წესების მიღებას");
+    //   return;
+    // }
+    // alert("თქვენ დათანხმდით წესებს და შეგიძლიათ გაგრძელება!");
 
-    if (selectedPhotos.length < 2) {
-      alert("გთხოვთ ატვირთოთ მინიმუმ 2 სურათი");
-      return;
-    }
+    // if (selectedPhotos.length < 2) {
+    //   alert("გთხოვთ ატვირთოთ მინიმუმ 2 სურათი");
+    //   return;
+    // }
 
     const formData = new FormData();
 
@@ -54,8 +55,21 @@ export default function Form() {
     if (data.photo2?.[0]) formData.append("photo2", data.photo2[0]);
     if (data.photo3?.[0]) formData.append("photo3", data.photo3[0]);
 
-    console.log("Form Data Submitted:", data);
-    alert("Form submitted successfully!");
+    try {
+      const response = await axios.post(
+        "http://localhost:3001/donors",
+        formData,
+        {
+          headers: {
+            "Content-Type": "application/json", 
+          },
+        }
+      );
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+    alert("მონაცემები წარმატებით გაიგზავნა!");
   };
 
   const [setPrivacy, isSetPrivacy] = useState(false);
