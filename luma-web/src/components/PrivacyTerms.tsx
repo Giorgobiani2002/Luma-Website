@@ -1,66 +1,69 @@
-"use client";
+'use client';
+
+import LangTransitionH1 from '@/lib/LangTransitionH1';
+import { useTranslations } from 'next-intl';
 
 type PrivacyTermsProps = {
   onClose: () => void;
 };
 
 export default function PrivacyTerms({ onClose }: PrivacyTermsProps) {
+  const t = useTranslations();
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center">
+    <div className='fixed inset-0 z-50 flex items-center justify-center'>
       <div
-        className="absolute inset-0  bg-opacity-40 backdrop-blur-sm"
+        className='absolute inset-0  bg-opacity-40 backdrop-blur-sm'
         onClick={onClose}
       ></div>
 
-      <div className="relative max-w-3xl mx-4 p-6 bg-white rounded-lg shadow-lg z-10 overflow-y-auto max-h-[80vh]">
+      <div className='relative max-w-3xl mx-4 p-6 bg-white rounded-lg shadow-lg z-10 overflow-y-auto max-h-[80vh]'>
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 text-gray-500 hover:text-gray-800 font-bold text-xl cursor-pointer"
+          className='absolute top-3 right-3 text-gray-500 hover:text-gray-800 font-bold text-xl cursor-pointer'
         >
           ✕
         </button>
 
-        <h1 className="text-2xl font-bold mb-4 text-center">
-          ლუმას დონორების კონფიდენციალურობის პოლიტიკა და წესები
-        </h1>
+        <LangTransitionH1
+          title='privacy.title'
+          className='text-2xl font-bold mb-4 text-center'
+        />
 
-        <div className="space-y-4 text-gray-700">
+        <div className='space-y-4 text-gray-700'>
+          <p>{t('privacy.intro')}</p>
           <p>
-            ლუმას პლატფორმაზე დონორად რეგისტრაციით, თქვენ ეთანხმებით პირადი
-            ინფორმაციის შეგროვებას, გამოყენებას და დაცვას შემდეგი წესებით:
+            <strong>{t('privacy.sections.eligibility.title')}</strong>{' '}
+            {t('privacy.sections.eligibility.text')}
           </p>
           <p>
-            <strong>1. უფლებამოსილება :</strong> თქვენ ადასტურებთ, რომ თქვენი
-            ასაკი მინიმუმ 18 წელია.
+            <strong>{t('privacy.sections.collection.title')}</strong>{' '}
+            {t('privacy.sections.collection.text')}
           </p>
           <p>
-            <strong>2. პირადი ინფორმაციის შეგროვება და გამოყენება:</strong>{" "}
-            რეგისტრაციის დონორის რეგისტრაციის ფორმის შევსებით, თქვენ ეთანხმებით
-            თქვენი ინფორმაციის, მათ შორის, თქვენი სახელის, ასაკის, სამედიცინო
-            ისტორიისა და ფოტოების შეგროვებასა და გამოყენებას, იმისათვის, რომ
-            თქვენი პროფილი იყოს ნაჩვენები პოტენციურ მსურველზე, რომლებსაც
-            შესაძლოა ჰქონდეს თქვენი კვერცხუჯრედის ან სპერმის შეძენის ინტერესი.
+            <strong>{t('privacy.sections.usage.title')}</strong>{' '}
+            {t('privacy.sections.usage.text')}
           </p>
           <p>
-            <strong>3. ინფორმაციის გამოყენება:</strong> თქვენი ინფორმაცია
-            გამოიყენება მხოლოდ პროფილის შექმნისა და მიმღებებთან შესაბამისობის
-            უზრუნველსაყოფად.
-          </p>
-          <p>
-            <strong>4. კონფიდენციალურობა და უსაფრთხოება:</strong> თქვენი
-            მონაცემები დაცულია და მესამე მხარეს არასდროს მიეწოდება თქვენი
-            თანხმობის გარეშე.
+            <strong>{t('privacy.sections.confidentiality.title')}</strong>{' '}
+            {t('privacy.sections.confidentiality.text')}
           </p>
 
           <p>
-            <strong>5. ფოტოების გამოყენებაზე თანხმობა:</strong> თქვენი სურათების
-            ატვირთვით, ადასტურებთ, რომ სურათებზე უფლებები თქვენ გეკუთვნით და
-            თანხმობას გვაძლევთ მათი გამოყენებისთვის, რათა თქვენი პროფილი
-            გამოჩნდეს კლიენტებისთვის ხილვად პლატფორმაზე.
+            <strong>{t('privacy.sections.visibility.title')}</strong>{' '}
+            {t('privacy.sections.visibility.text')}
           </p>
           <p>
-            <strong>6. მიღება:</strong> რეგისტრაციის დასრულებით, თქვენ
-            ადასტურებთ, რომ ხართ მინიმუმ 18 წლის და ეთანხმებით ამ წესებს.
+            <strong>{t('privacy.sections.withdraw.title')}</strong>{' '}
+            {t('privacy.sections.withdraw.text')}
+          </p>
+          <p>
+            <strong>{t('privacy.sections.images.title')}</strong>{' '}
+            {t('privacy.sections.images.text')}
+          </p>
+          <p>
+            <strong>{t('privacy.sections.acceptance.title')}</strong>{' '}
+            {t('privacy.sections.acceptance.text')}
           </p>
         </div>
       </div>
