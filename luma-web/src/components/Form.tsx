@@ -1,8 +1,10 @@
 'use client';
 
+import PrivacyTerms from "./PrivacyTerms";
+import { useState } from "react";
+import axios from "axios";
 import { useForm } from 'react-hook-form';
-import PrivacyTerms from './PrivacyTerms';
-import { useState } from 'react';
+
 import LangTransitionH2 from '@/lib/LangTransitionH2';
 import LangTranstionSpan from '@/lib/LangTranstionSpan';
 import { useTranslations } from 'next-intl';
@@ -27,24 +29,28 @@ export default function Form() {
     formState: { errors },
   } = useForm<FormValues>();
   const [accepted, setAccepted] = useState(false);
+  const [setPrivacy, isSetPrivacy] = useState(false);
+
+  const t = useTranslations();
 
   const onSubmit = async (data: FormValues) => {
-    const selectedPhotos = [data.photo1, data.photo2, data.photo3].filter(
-      (fileList) => fileList && fileList.length > 0
-    );
     if (!accepted) {
       alert('გთხოვთ, დათანხმდეთ პირადი ინფორმაციისა და წესების მიღებას');
       return;
     }
-    alert('თქვენ დათანხმდით წესებს და შეგიძლიათ გაგრძელება!');
 
-    if (selectedPhotos.length < 2) {
+    
+    const allFiles: File[] = [];
+    if (data.photo1?.length) allFiles.push(data.photo1[0]);
+    if (data.photo2?.length) allFiles.push(data.photo2[0]);
+    if (data.photo3?.length) allFiles.push(data.photo3[0]);
+
+    if (allFiles.length < 2) {
       alert('გთხოვთ ატვირთოთ მინიმუმ 2 სურათი');
       return;
     }
 
     const formData = new FormData();
-
     formData.append('name', data.name);
     formData.append('lastName', data.lastName);
     formData.append('age', String(data.age));
@@ -53,17 +59,26 @@ export default function Form() {
     formData.append('weight', String(data.weight));
     formData.append('education', data.education);
 
-    if (data.photo1?.[0]) formData.append('photo1', data.photo1[0]);
-    if (data.photo2?.[0]) formData.append('photo2', data.photo2[0]);
-    if (data.photo3?.[0]) formData.append('photo3', data.photo3[0]);
+    
+    allFiles.forEach((file) => formData.append('photos', file));
 
-    console.log('Form Data Submitted:', data);
-    alert('Form submitted successfully!');
+    try {
+      const response = await axios.post(
+        "http://localhost:3001/donors/create",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data", 
+          },
+        }
+      );
+      console.log('Response:', response.data);
+      alert("მონაცემები წარმატებით გაიგზავნა!");
+    } catch (error) {
+      console.error(error);
+      alert('Uploading failed!');
+    }
   };
-
-  const [setPrivacy, isSetPrivacy] = useState(false);
-
-  const t = useTranslations();
 
   return (
     <div>
