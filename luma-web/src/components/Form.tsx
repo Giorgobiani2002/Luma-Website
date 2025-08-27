@@ -92,9 +92,8 @@ export default function Form() {
       setFoto3Preview(null);
     } catch (err: unknown) {
       console.log(err);
-      let msg = t('toasts.uploadFailed');
 
-      toast.error(msg);
+      toast.error('toasts.uploadFailed');
     } finally {
       setLoading(false);
     }
