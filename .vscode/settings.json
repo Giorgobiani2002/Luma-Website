@@ -1,0 +1,6 @@
+{
+    "i18n-ally.localesPaths": [
+        "luma-web/messages",
+        "luma-web/src/i18n"
+    ]
+}

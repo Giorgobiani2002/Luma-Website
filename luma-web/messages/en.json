@@ -38,7 +38,8 @@
     "contact": "Contact",
     "email": "Email",
     "whatsapp": "WhatsApp",
-    "viber": "Viber"
+    "viber": "Viber",
+    "sending": "Sending…"
   },
   "placeholders": {
     "firstName": "Lika",
@@ -56,7 +57,13 @@
     "phone": "Phone number is required",
     "education": "Education is required",
     "weight": "Weight is required",
-    "height": "Height is required"
+    "height": "Height is required",
+    "acceptTerms": "Please accept the terms and conditions for processing personal data",
+    "minPhotos": "Please upload at least 2 photos"
+  },
+  "toasts": {
+    "sentSuccess": "Data has been sent successfully!",
+    "uploadFailed": "Request limit: You can submit up to 3 applications from one phone number within 24 hours."
   },
 
   "privacy": {

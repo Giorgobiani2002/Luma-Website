@@ -24,3 +24,20 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 } */
+
+.btn-spinner {
+  width: 1.25rem; /* 20px */
+  height: 1.25rem; /* 20px */
+  border-radius: 9999px; /* round */
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #ffffff;
+  border-right-color: #ffffff;
+  animation: btn-spin 0.8s linear infinite;
+  display: inline-block;
+}
+
+@keyframes btn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
